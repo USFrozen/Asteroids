@@ -4,6 +4,8 @@
 import pygame
 # Imports game constants from local constants.py
 from constants import *
+# Imports player from local player.py
+from player import *
 
 def main():
     # Startup messages, shows game resolution
@@ -26,6 +28,9 @@ def main():
     # Delta Time, time since last tick happened in miliseconds
     dt = 0
 
+    # Draw player
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
     # Primary game loop
     # Allows quitting game through X button, Alt F4, and other methods
     while True:
@@ -36,11 +41,12 @@ def main():
         # Fills screen with black color
         screen.fill((0,0,0))
 
+        # Draw player on screen
+        player.draw(screen)
+
         # Flips frame buffer to next frame (default 60 FPS)
         pygame.display.flip()
 
-        # Draw player
-        #
 
         # Ticks game loop, pauses for (default) 1/60th of a second, sets Delta Time in MS
         dt = (clock.tick(fps) / 1000)
