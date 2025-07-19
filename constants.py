@@ -1,6 +1,8 @@
-# Screen HxW constants
+# Screen draw constants
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
+# Sets game FPS to limit resource usage.
+FRAMERATE = 60
 
 # Asteroid constants
 ASTEROID_MIN_RADIUS = 20
