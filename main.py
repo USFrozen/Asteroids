@@ -41,7 +41,8 @@ def main():
         # Fills screen with black color
         screen.fill((0,0,0))
 
-        # Draw player on screen
+        # Update then draw player on screen
+        player.update(dt)
         player.draw(screen)
 
         # Flips frame buffer to next frame (default 60 FPS)
