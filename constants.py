@@ -1,7 +1,6 @@
 # Screen draw constants
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
-# Sets game FPS to limit resource usage.
 FRAMERATE = 60
 
 # Asteroid constants
@@ -16,3 +15,8 @@ PLAYER_SPRITE_COLOR = "white"
 PLAYER_LINE_THICKNESS = 2
 PLAYER_TURN_SPEED = 300
 PLAYER_SPEED = 200
+
+# Shot constants
+PLAYER_SHOOT_SPEED = 500
+SHOT_RADIUS = 5
+SHOT_COLOR = "white"

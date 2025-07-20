@@ -7,15 +7,7 @@ from constants import *
 from player import *
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
-
-# groups?
-updatable = pygame.sprite.Group()
-drawable = pygame.sprite.Group()
-asteroids = pygame.sprite.Group()
-
-Player.containers = (updatable, drawable)
-Asteroid.containers = (asteroids, updatable, drawable)
-AsteroidField.containers = (updatable)
+from shot import Shot
 
 def main():
     print("Starting Asteroids!")
@@ -23,14 +15,22 @@ def main():
     print(f"Screen height: {SCREEN_HEIGHT}")
     pygame.init()
 
+    # Groups
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
+
+    Player.containers = (updatable, drawable)
+    Asteroid.containers = (asteroids, updatable, drawable)
+    AsteroidField.containers = (updatable)
+    Shot.containers = (shots, updatable, drawable)
+
+    #
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-
     clock = pygame.time.Clock()
-
     dt = 0
-
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-
     AsteroidField()
     # Primary game loop
     # Allows quitting game through X button, Alt F4, and other methods
@@ -39,19 +39,19 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        # Screen draw and update
-        screen.fill("black")
-
-        updatable.update(dt)
+        for thing in updatable:
+            thing.update(dt)
 
         for asteroid in asteroids:
             if player.hit(asteroid):
                 print("Game over!")
                 sys.exit()
 
+        # Screen
+        screen.fill("black")
+
         for sprite in drawable:
             sprite.draw(screen)
-
 
         # Flips frame buffer to next frame (default 60 FPS)
         pygame.display.flip()
