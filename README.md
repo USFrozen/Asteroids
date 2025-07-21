@@ -1,23 +1,23 @@
-##-----------------------------------------------
-##This is a very simple Asteroids clone in Python
-##-----------------------------------------------
+-----------------------------------------------
+This is a very simple Asteroids clone in Python
+-----------------------------------------------
 
-###------------------ Controls -------------------
+------------------ Controls -------------------
 
-Move Forward: W or UP ARROW
-Move Backward: S or DOWN ARROW
-Rotate Left: A or LEFT ARROW
-Rotate Right: D or RIGHT ARROW
-Fire: Space Bar or Left CTRL
+> Move Forward: W or UP ARROW
+> Move Backward: S or DOWN ARROW
+> Rotate Left: A or LEFT ARROW
+> Rotate Right: D or RIGHT ARROW
+> Fire: Space Bar or Left CTRL
 
-###--------------- Working Features --------------
+--------------- Working Features --------------
 
 Player movement
 Player weapon
 Asteroid field spawning
 Asteroid splitting on death
 
-###-------------------- To Do --------------------
+-------------------- To Do --------------------
 
 Scoring
 Player lives
@@ -26,7 +26,7 @@ Title screen
 Game over screen
 Screen wrap
 
-###-------------- Possible Features --------------
+-------------- Possible Features --------------
 
 Powerups
   Faster player movement
