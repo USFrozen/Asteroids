@@ -1,5 +1,5 @@
 import pygame
-from circleshape import *
+from circleshape import CircleShape
 from constants import *
 import random
 
@@ -8,7 +8,7 @@ class Asteroid(CircleShape):
         super().__init__(x, y, radius)
 
     def draw(self, screen):
-        pygame.draw.circle(screen, "white", self.position, self.radius, width=2)
+        pygame.draw.circle(screen, ASTEROID_COLOR, self.position, self.radius, width=2)
 
     def update(self, dt):
         self.position += (self.velocity * dt)
